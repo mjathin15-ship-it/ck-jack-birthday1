@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise 🎂</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;background:#050507;color:#fff;font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;display:flex;justify-content:center;overflow-x:hidden;
+}
+.phone{
+  width:100%;max-width:430px;min-height:100vh;
+  padding:24px 18px 40px;
+  background:radial-gradient(circle at 80% 25%,#171020 0,#08080c 35%,#030305 75%);
+  position:relative;
+}
+.top{height:58px;display:flex;align-items:center;gap:16px;font-size:23px;font-weight:700}
+.back{font-size:38px;font-weight:300;line-height:1}
+.chat{margin-top:180px;display:flex;flex-direction:column;gap:13px}
+.bubble{
+  align-self:flex-start;background:linear-gradient(135deg,#4b4c50,#34353a);
+  padding:13px 18px;border-radius:26px;color:#f5f5f5;font-size:17px;
+  box-shadow:0 5px 18px #0008;max-width:92%;
+}
+.card{
+  margin-top:2px;border-radius:20px;overflow:hidden;
+  background:#17131a;box-shadow:0 10px 30px #0009;
+  border:1px solid #302735;
+}
+.bday{
+  min-height:215px;padding:24px 16px;text-align:center;position:relative;
+  background:linear-gradient(135deg,#ffd7e2,#fff0d9 48%,#ffc8d8);
+  color:#9e294f;overflow:hidden;
+}
+.balloon{position:absolute;font-size:42px;animation:float 3s ease-in-out infinite}
+.b1{left:12px;top:15px}.b2{right:15px;top:12px}.b3{left:65px;bottom:5px;font-size:30px}
+@keyframes float{50%{transform:translateY(-8px) rotate(3deg)}}
+.teddy{font-size:55px;position:relative;z-index:2}
+.small{font-size:16px;letter-spacing:3px;font-weight:700}
+.big{font-size:43px;font-weight:900;font-style:italic;margin:3px 0}
+.wish{font-size:13px;color:#73344a}
+.gifts{font-size:29px;margin-top:12px}
+.caption{padding:15px 17px 8px;font-size:20px;font-weight:800;line-height:1.18}
+.desc{padding:0 17px 14px;color:#b8b8bd;font-size:15px;line-height:1.35}
+.link{
+  align-self:flex-start;background:linear-gradient(135deg,#55565a,#393a3f);
+  padding:13px 16px;border-radius:25px;color:#fff;font-size:15px;
+  word-break:break-all;box-shadow:0 5px 18px #0008;
+}
+.double{font-size:12px;color:#aaa;margin:-6px 0 0 14px}
+.footer{text-align:center;margin-top:42px;color:#ffe600;font-weight:900;font-size:22px}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.heart{position:absolute;bottom:-30px;font-size:20px;animation:rise 5s linear forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+.tap{
+  margin-top:18px;text-align:center;color:#aaa;font-size:13px;
+  animation:pulse 1.7s infinite;
+}
+@keyframes pulse{50%{opacity:.45}}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="top"><span class="back">‹</span><span>bd wish link</span><span style="margin-left:auto;font-size:40px;font-weight:300">＋</span></div>
+
+  <div class="chat">
+    <div class="bubble">Happy Birthday Brodaaa 🥹❤️</div>
+    <div class="bubble">Made something special for you ❤️</div>
+
+    <div class="card">
+      <div class="bday">
+        <div class="balloon b1">🎈</div><div class="balloon b2">🎈</div><div class="balloon b3">🎈</div>
+        <div class="teddy">🧸🎂</div>
+        <div class="small">HAPPY</div>
+        <div class="big">Birthday!</div>
+        <div class="wish">Wishing you a day as special as you are! 💕</div>
+        <div class="gifts">🎁 🎁 🎁</div>
+      </div>
+      <div class="caption">Send a Birthday Surprise 🎂 | OurMoments</div>
+      <div class="desc">Candles, confetti and a special message made just for you. Tap below to open your surprise.</div>
+    </div>
+
+    <div class="link">https://mjathin15-ship-it.github.io/ck-jack-birthday/</div>
+    <div class="double">Double-tap to ❤️</div>
+  </div>
+
+  <div class="footer">Efforts are not expensive 🥺❤️</div>
+  <div class="tap">Tap anywhere for a little surprise ✨</div>
+</div>
+<div class="hearts" id="hearts"></div>
+
+<script>
+document.body.addEventListener('click',()=>{
+  for(let i=0;i<8;i++){
+    const h=document.createElement('div');
+    h.className='heart'; h.textContent=['❤️','💖','💕','✨'][Math.floor(Math.random()*4)];
+    h.style.left=Math.random()*100+'vw';
+    h.style.animationDuration=(3+Math.random()*3)+'s';
+    document.getElementById('hearts').appendChild(h);
+    setTimeout(()=>h.remove(),6500);
+  }
+});
+</script>
+</body>
+</html>
